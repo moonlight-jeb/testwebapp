@@ -18,7 +18,13 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+    <style>
+      .data {
+        display: block;
+        padding: 2.5px;
+        border : solid black 1px;
+      }
+    </style>
   </head>
   <body>
     <!--[if IE]>
@@ -35,15 +41,46 @@
       <div class="body row" id="account_info">
         <h3 class="text-muted">Account information</h3>
         <div class="col-xs-12">
-            <span>Coinbase :: <span id="current_etherbase"></span></span>
+            <span>Coinbase :: <span class="data" id="current_etherbase"></span></span>
         </div>
         <div class="col-xs-12">
-            <span>Balance :: <span id="current_bal"></span></span>
+            <span>Balance :: <span class="data" id="current_bal"></span></span>
         </div>
         <div class="col-xs-12">
-            <span>Other Accounts :: <span id="other_accounts"></span></span>
+            <span>Other Accounts :: <span class="data" id="other_accounts"></span></span>
         </div>
       </div>
+
+      <div class="body row" id="contract_info">
+          <h3 class="text-muted">Contract Data
+              <button id="deploy_contract" class="btn">deploy</button>
+          </h3>
+          
+          <div class="col-xs-4">
+            <span>Contract Address</span>
+          </div>
+          <div class="col-xs-8">
+            <span class="data" id="contract_address"></span>
+          </div>
+      </div>
+
+      <div class="body row" id="interaction">
+          <h3 class="text-muted">Send Message</h3>
+          <div style="display:flex">
+            <input style="flex-grow:1;border-bottom-right-radius: 0px; border-top-right-radius: 0;"class="form-control" name="message_text" id="message_text" placeholder="Type a message to send">
+            <button id="send_message" style="width:80px;border-bottom-left-radius: 0px; border-top-left-radius:0px;"class="btn btn-primary">Send</button>
+          </div>
+      </div>
+        
+      <div class="body row" id="transactions">
+          <h3 class="text-muted">Transactions</h3>
+        
+      </div>
+      <div class="body row" id="events">
+          <h3 class="text-muted">Events</h3>
+
+      </div>
+
     </div>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
